@@ -1,0 +1,77 @@
+<div class="main">
+    <div class="container">
+        <form [formGroup]="formGroup">
+            <label>Concurrency using Reactive Form:</label>
+            <div class="box">
+                <label>Enter concurrency:</label>
+                <input formControlName="concurrency">
+                <app-error-message [control]="formGroup.controls.concurrency"></app-error-message>
+            </div>
+            <div class="box">
+                <label>From:</label>
+                <select [formControl]="formGroup.controls.firstConcurrency">
+                    @for(option of concurrencyForm.firstConcurrency.options; track option) {
+                        <option [value]="option.value">{{option.name}}</option>
+                    }
+                </select>
+            </div>
+            <div class="box">
+                <label>To:</label>
+                <select [formControl]="formGroup.controls.secondConcurrency">
+                    @for(option of concurrencyForm.secondConcurrency.options; track option) {
+                        <option [value]="option.value">{{option.name}}</option>
+                    }
+                </select>
+            </div>
+            <button 
+                id="btn-sumbit-1"
+                aria-label="submit"
+                type="button"
+                (click)="submit('form')"
+                [disabled]="formGroup.status == 'INVALID'">
+                Submit
+            </button> 
+        </form>
+    </div>
+
+    <div class="container">
+        <label>Concurrency using Template Driven:</label>
+        <div class="box">
+            <label>Enter concurrency:</label>
+            <input
+            id="concurrency"
+            [(ngModel)]="concurrencyForm.concurrency.value" 
+            required
+            nonNumeric
+            #concurrency="ngModel">
+            <app-error-message [model]="concurrency"></app-error-message>
+        </div>
+        <div class="box">
+            <label>From:</label>
+            <select [(ngModel)]="concurrencyForm.firstConcurrency.value" required>
+                @for(option of concurrencyForm.firstConcurrency.options; track option) {
+                    <option [value]="option.value">{{option.name}}</option>
+                }
+            </select> 
+        </div>
+        <div class="box">
+            <label>To:</label>
+            <select [(ngModel)]="concurrencyForm.secondConcurrency.value" required>
+                @for(option of concurrencyForm.secondConcurrency.options; track option) {
+                    <option [value]="option.value">{{option.name}}</option>
+                }
+            </select> 
+        </div>
+        <button 
+            id="btn-sumbit-2"
+            aria-label="submit"
+            type="button"
+            (click)="submit('template')"
+            [disabled]="isDisabled()">
+            Submit
+        </button>
+    </div>
+    <div class="input-form">
+        <label>Result: {{totalValue}}</label>
+    </div>
+</div>

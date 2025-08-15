@@ -1,0 +1,12 @@
+
+<div class="menu-container"> 
+    @for(menu of menuList(); track menu.id) {
+        <button mat-button [matMenuTriggerFor]="above">{{menu.title}}</button>
+        <mat-menu #above="matMenu" yPosition="below">
+            @for(child of menu.children; track child.id) {
+                <button mat-menu-item>{{child.title}}</button>
+            }
+        </mat-menu>
+    }
+</div>
+

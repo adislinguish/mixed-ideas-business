@@ -1,0 +1,17 @@
+@media(min-width: 600px) {
+    mat-stepper {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media(min-width: 800px) {
+    mat-stepper {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(min-width: 650px) {
+    
+}

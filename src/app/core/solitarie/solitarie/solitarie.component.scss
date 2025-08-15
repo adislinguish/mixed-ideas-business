@@ -1,0 +1,46 @@
+.card {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 150px;
+    width: 100px;
+    background: white;
+
+    padding: 8px;
+    font-size: 3em;
+
+    &.red {
+      color: red;
+    }
+
+    &.facedown {
+      background: darkblue;
+      color: darkblue;
+    }
+}
+
+.tableu-1 {
+    display: flex;
+    flex-direction: row;
+
+    .stack-1 {
+        display: flex;
+        flex-direction: column;
+        position: relative;  
+    }
+
+    li:not(:first-of-type) {
+        translate: 0 -120px;
+    }
+
+}
+
+:host {
+    ul, li {
+        list-style: none;
+    }
+
+    .stack-holder {
+        margin-right: 10px;
+    }
+}

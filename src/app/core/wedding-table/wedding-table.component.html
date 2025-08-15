@@ -1,0 +1,61 @@
+<div class="container">
+    <table>
+        <caption>
+            This is an example HTML table
+        </caption>
+        <thead>
+            <tr>
+                <th scope="col">
+                    Designer Name
+                </th>
+                <th scope="col">
+                    Description
+                </th>
+                <th scope="col">
+                    Date
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(dress of weddignDresses(); track dress.id) {
+                <tr>
+                    <td scope="row">
+                        {{dress.designerName}}
+                    </td>
+                    <td scope="row">
+                        {{dress.description}}
+                    </td>
+                    <td scope="row">
+                        {{dress.date}}
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="2">Total</th>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table> 
+</div>
+<input [(ngModel)]="test">
+<table>
+    <thead>
+        <tr>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of weddignDresses(); track item.id) {
+            <tr>
+                <td>
+                    <input [(ngModel)]="test">
+                </td>
+            </tr>
+        }
+        
+       
+    </tbody>
+</table>

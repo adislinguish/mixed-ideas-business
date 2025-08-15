@@ -1,0 +1,24 @@
+<div class="example-container" [class.example-is-mobile]="isMobile()">
+  <mat-sidenav-container class="example-sidenav-container"
+                        [style.marginTop.px]="isMobile() ? 56 : 0">
+    <mat-sidenav #snav [mode]="isMobile() ? 'over' : 'side'"
+                [fixedInViewport]="isMobile()" fixedTopGap="56"
+                opened>
+      <mat-nav-list>
+        @for (nav of fillerNav(); track nav) {
+          <a mat-list-item
+          mat-tab-link
+          #rla="routerLinkActive"
+          routerLink="{{nav.url}}"
+          routerLinkActive
+          [routerLinkActiveOptions]="routeMatchOptions"
+          >{{nav.title}}</a>
+        }
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

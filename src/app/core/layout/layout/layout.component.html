@@ -1,0 +1,28 @@
+
+<div class="container">
+  
+  <mat-toolbar class="header example-toolbar">
+    <button mat-icon-button (click)="snav.openSideBar()"><mat-icon>menu</mat-icon></button>
+    <fc-menu [menuList]="menuList"></fc-menu>
+  </mat-toolbar>
+ 
+  <!-- <main id="main-content">
+    <h2>main content</h2>
+    <app-concurrency></app-concurrency>
+  </main> -->
+  <!-- <nav>
+    <h2>nav</h2>
+    <ul>
+      <li>nav item</li>
+      <li>nav item</li>
+      <li>nav item</li>
+      <li>nav item</li>
+    </ul>
+  </nav> -->
+  <fc-side-nav #snav
+    [fillerNav]="fillerNav"></fc-side-nav>
+  <!-- <footer>
+    <h2>footer</h2>
+  </footer> -->
+</div>
+

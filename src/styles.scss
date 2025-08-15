@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+@use './styles/theme-colors' as custom-theme;
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@include mat.app-background();
+@include mat.core();
+//@include mat.all-component-themes(custom-theme.$light-theme);
+
+// /* You can add global styles to this file, and also import other style files */
+// $theme: mat.define-theme((
+//   color: (
+//     theme-type: light,
+//     primary: mat.$azure-palette,
+//     tertiary: mat.$blue-palette,
+//   ),
+//   density: (
+//     scale: 0,
+//   )
+// ));
+
+html {
+    @include mat.all-component-themes(custom-theme.$light-theme);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0rem;
+    margin: 0rem;
+}

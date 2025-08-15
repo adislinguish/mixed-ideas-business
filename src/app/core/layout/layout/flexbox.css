@@ -1,0 +1,46 @@
+/* 
+Keyword colors can be found at http://colours.neilorangepeel.com/
+*/
+h1, h2 {
+  text-transform: uppercase;
+}
+
+.container {
+  color: white;
+  font-family: helvetica, arial, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header {
+  background: skyblue;
+  flex: 1 0 100%;
+  order: 1;
+  height: 60px;
+}
+
+main {
+  color: black;
+  order: 3;
+  flex: 1 1 500px;
+  padding: 20px;
+}
+
+nav {
+  background: cadetblue;
+  order: 2;
+  flex: 1 0 100px;
+}
+
+aside {
+  background: seagreen;
+  order: 4;
+  flex: 1 0 150px;
+}
+
+footer {
+  background: darkslateblue;
+  flex: 1 0 100%;
+  order: 5;
+  padding: 20px;
+}

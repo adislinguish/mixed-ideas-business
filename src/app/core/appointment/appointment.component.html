@@ -1,0 +1,27 @@
+<mat-stepper linear #stepper>
+    <mat-step label="Personal Details">
+        <app-appointment-form></app-appointment-form>
+        <ng-template matStepContent>
+            <button mat-button matStepperNext type="button">Next</button>
+        </ng-template>
+    </mat-step>
+    <mat-step label="When">
+        <fc-listbox (valueChange)="valueChanged($event)" #listbox>
+            <fc-option value="monday">Monday</fc-option>
+            <fc-option value="tuesday">Tuesday</fc-option>
+            <fc-option value="wednesday">Wednesday</fc-option>
+            <fc-option value="thursday">Thursday</fc-option>
+            <fc-option value="friday">Friday</fc-option>
+        </fc-listbox>
+        <p>Selected: {{listbox.value()}}</p>
+        <ng-template matStepContent>
+            <button mat-button matStepperPrevious type="button">Back</button>
+            <button mat-button matStepperNext type="button">Next</button>
+        </ng-template>
+    </mat-step>
+    <mat-step label="Confirmation">
+        <ng-template matStepContent>
+            <button mat-button matStepperPrevious type="button">Back</button>
+        </ng-template>
+    </mat-step>
+</mat-stepper>

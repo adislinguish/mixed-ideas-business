@@ -1,0 +1,36 @@
+<p>Solitarie works!</p>
+
+<section>
+    <p>
+        Deck
+    </p>
+</section>
+<section>
+    <p>
+        Foundations
+    </p>
+    @for (stack of foundations; track $index) {
+       @if (stack.length === 0) {
+        <div class="stack-holder card"></div>
+       } @else {
+            <app-card [card]="stack[stack.length - 1]"></app-card>
+       }
+    }
+</section>
+<section>
+    <label>
+        Tableu
+    </label>
+    <div class="tableu-1">
+        @for (stack of tableu; track $index) {
+            <ul class="stack-1">
+                @for (card of stack; track card.id) {
+                    <li>
+                        <app-card [card]="card"></app-card>
+                    </li>  
+                }
+            </ul>
+        }
+    </div>
+</section>
+

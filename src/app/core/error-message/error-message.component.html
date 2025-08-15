@@ -1,0 +1,19 @@
+<div class="error-message">
+@if (control && control.status == 'INVALID' && (control.dirty || control.touched)) {
+    @if (control.hasError('required')) {
+        <mat-error controlErrors>Field is required.</mat-error>
+    }
+    @if (control.hasError('nonNumeric')) {
+        <mat-error>Only numeric values allowed.</mat-error>
+    }
+}
+
+@if (model && model.status == 'INVALID' && (model.dirty || model.touched)) {
+    @if (model.hasError('required')) {
+        <mat-error>Field is required.</mat-error>
+    }
+    @if (model.hasError('nonNumeric')) {
+        <mat-error>Only numeric values allowed.</mat-error>
+    }
+}
+</div>
