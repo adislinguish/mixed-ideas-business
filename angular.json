@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wedding-app": {
+    "mixed-ideas-business": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/wedding-app",
+            "outputPath": "dist/mixed-ideas-business",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "wedding-app:build:production"
+              "buildTarget": "mixed-ideas-business:build:production"
             },
             "development": {
-              "buildTarget": "wedding-app:build:development"
+              "buildTarget": "mixed-ideas-business:build:development"
             }
           },
           "defaultConfiguration": "development"
